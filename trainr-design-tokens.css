@@ -1,0 +1,88 @@
+:root {
+  /* Colour */
+  --trainr-color-bg: #090a0c;
+  --trainr-color-surface: #131518;
+  --trainr-color-surface-elevated: #181a1e;
+  --trainr-color-border: #292c32;
+  --trainr-color-border-strong: #3a3d44;
+  --trainr-color-text-primary: #f7f7f5;
+  --trainr-color-text-secondary: #b8bbc1;
+  --trainr-color-text-muted: #7c8088;
+  --trainr-color-brand: #ff555c;
+  --trainr-color-brand-soft: #ff7378;
+  --trainr-color-success: #b9ef5b;
+  --trainr-color-info: #6ab8ff;
+  --trainr-color-recovery: #9d86ff;
+  --trainr-color-warning: #f6b84c;
+  --trainr-color-error: #ff6b72;
+
+  /* Typography */
+  --trainr-font-display: "Space Grotesk", Inter, "SF Pro Display", sans-serif;
+  --trainr-font-body: "DM Sans", Inter, "SF Pro Text", sans-serif;
+  --trainr-type-display-size: 2.25rem;
+  --trainr-type-display-line: 2.625rem;
+  --trainr-type-h1-size: 1.875rem;
+  --trainr-type-h1-line: 2.25rem;
+  --trainr-type-h2-size: 1.3125rem;
+  --trainr-type-h2-line: 1.6875rem;
+  --trainr-type-h3-size: 1rem;
+  --trainr-type-h3-line: 1.375rem;
+  --trainr-type-body-size: 0.875rem;
+  --trainr-type-body-line: 1.375rem;
+  --trainr-type-secondary-size: 0.75rem;
+  --trainr-type-secondary-line: 1.125rem;
+
+  /* Spacing */
+  --trainr-space-1: 0.25rem;
+  --trainr-space-2: 0.5rem;
+  --trainr-space-3: 0.75rem;
+  --trainr-space-4: 1rem;
+  --trainr-space-5: 1.25rem;
+  --trainr-space-6: 1.5rem;
+  --trainr-space-8: 2rem;
+  --trainr-space-10: 2.5rem;
+  --trainr-space-12: 3rem;
+  --trainr-space-16: 4rem;
+
+  /* Radius */
+  --trainr-radius-sm: 0.75rem;
+  --trainr-radius-md: 1rem;
+  --trainr-radius-lg: 1.25rem;
+  --trainr-radius-xl: 1.5rem;
+  --trainr-radius-phone: 2.125rem;
+  --trainr-radius-full: 999px;
+
+  /* Elevation */
+  --trainr-shadow-hero: 0 18px 45px rgba(0, 0, 0, 0.2);
+  --trainr-shadow-brand: 0 18px 45px rgba(255, 85, 92, 0.2);
+  --trainr-shadow-prototype: 0 40px 110px rgba(0, 0, 0, 0.55);
+
+  /* Sizing */
+  --trainr-target-min: 2.75rem;
+  --trainr-control-height: 3.25rem;
+  --trainr-button-height: 3.375rem;
+  --trainr-page-inset: 1.375rem;
+
+  /* Motion */
+  --trainr-motion-fast: 150ms;
+  --trainr-motion-standard: 250ms;
+  --trainr-motion-slow: 400ms;
+  --trainr-motion-exercise: 4000ms;
+  --trainr-motion-loading: 2000ms;
+  --trainr-ease-enter: ease-out;
+  --trainr-ease-change: ease-in-out;
+}
+
+@media (max-width: 390px) {
+  :root {
+    --trainr-page-inset: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --trainr-motion-fast: 0ms;
+    --trainr-motion-standard: 0ms;
+    --trainr-motion-slow: 0ms;
+  }
+}

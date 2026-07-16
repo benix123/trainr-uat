@@ -2,7 +2,7 @@
 
 Status: **Approved for V1 production implementation**  
 Authoritative reference: `v1-design-freeze`  
-Approved implementation commit: `TO_BE_RECORDED`  
+Approved implementation commit: `c19ce69`  
 Deployed reference: https://benix123.github.io/trainr-uat/
 
 This document is the design source of truth for Trainr V1. The deployed coded prototype, this specification and the tagged repository state together define the approved interface.

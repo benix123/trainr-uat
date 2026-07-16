@@ -38,8 +38,10 @@ const checks = {
   ,sharedScheduleDates: byDate['2026-07-14'].title === 'Lower Body Strength' && byDate['2026-07-16'].title === 'Court Training' && byDate['2026-07-17'].title === 'Freshen Up' && byDate['2026-07-18'].type === 'FIXTURE'
   ,stageOrder: stages.map(stage => stage.id).join('>') === 'warmup>power>strength>superset-a>conditioning>cooldown'
   ,dialogSemantics: inline.includes("setAttribute('role','dialog')") && inline.includes("event.key==='Escape'")
+  ,modalFocusManagement: inline.includes("event.key==='Tab'&&modal") && inline.includes('modalReturnSelector')
   ,selectionSemantics: inline.includes('aria-pressed')
   ,timerNotLive: !html.includes('id="app" aria-live')
+  ,imageAltPolicy: inline.includes(".today-session img,.workout-art img") && inline.includes('player performing an explosive sport-specific movement')
   ,designFreezeDocument: fs.existsSync('docs/TRAINR_V1_DESIGN_FREEZE.md')
 };
 

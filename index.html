@@ -232,6 +232,9 @@
       };
       app.innerHTML=(views[view]||views.today)();
       bind();
+      app.querySelectorAll('.today-session img,.workout-art img,.generation-scene img,.result-scene img,.progress-hero img,.profile-hero img,.completion-scene img').forEach(img=>img.alt='');
+      const dnaImage=app.querySelector('.dna-hero img');if(dnaImage)dnaImage.alt=`${scenario.sport} player performing an explosive sport-specific movement`;
+      const learnImage=app.querySelector('.learn-feature img');if(learnImage)learnImage.alt='Player demonstrating a controlled rear-foot elevated split squat';
       if(modal){const dialog=app.querySelector('.modal');dialog?.setAttribute('role','dialog');dialog?.setAttribute('aria-modal','true');dialog?.setAttribute('aria-label',dialog.querySelector('h2')?.textContent||'Trainr dialog');requestAnimationFrame(()=>dialog?.querySelector('input,select,button')?.focus())}
       if(view==='rest')startRestTimer();
       if(view==='conditioningPlayer'&&conditioningRunning)startConditioningTimer();
@@ -281,7 +284,7 @@
     function startRestTimer(){if(restReady)return;const value=app.querySelector('#timer-value');restTimer=setInterval(()=>{restRemaining=Math.max(0,restRemaining-1);if(value)value.textContent=formatTime(restRemaining);if(restRemaining===0){clearInterval(restTimer);restReady=true;if(navigator.vibrate)navigator.vibrate(200);render()}},1000)}
     function startConditioningTimer(){const value=app.querySelector('#conditioning-time');restTimer=setInterval(()=>{conditioningSeconds=Math.max(0,conditioningSeconds-1);if(value)value.textContent=formatTime(conditioningSeconds);if(conditioningSeconds===0){clearInterval(restTimer);conditioningRunning=false;if(navigator.vibrate)navigator.vibrate(160);render()}},1000)}
     function advanceWorkout(){clearInterval(restTimer);restReady=false;if(restNext?.type==='power'){powerSet++;restNext=null;go('powerPlayer');return}if(restNext?.type==='superset'){currentSet=restNext.round;currentExercise=2;restNext=null;go('guided');return}if(restNext?.type==='superset-finish'){restNext=null;workoutStage='conditioning';go('conditioningOverview');return}currentSet++;restNext=null;go('guided')}
-    document.addEventListener('keydown',event=>{if(event.key==='Escape'&&modal){event.preventDefault();action('close-modal')}});
+    document.addEventListener('keydown',event=>{if(event.key==='Escape'&&modal){event.preventDefault();action('close-modal');return}if(event.key==='Tab'&&modal){const controls=[...app.querySelectorAll('.modal button:not([disabled]),.modal input:not([disabled]),.modal select:not([disabled]),.modal textarea:not([disabled])')].filter(el=>el.offsetParent!==null);if(!controls.length)return;const first=controls[0],last=controls[controls.length-1];if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus()}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus()}}});
     render();
   })();
   </script>
